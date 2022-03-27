@@ -1,0 +1,52 @@
+[
+    {
+        "text": "timing 1",
+        "link": "/timing/index.html",
+        "exclusive": false
+    },
+    {
+        "text": "timing 2",
+        "link": "https://www.worldtimebuddy.com/",
+        "exclusive": true
+    },
+    {
+        "text": "calendar1",
+        "link": "/economicCalendar.html",
+        "exclusive": false
+    },
+    {
+        "text": "calendar2",
+        "link": "https://www.fxstreet.com/economic-calendar",
+        "exclusive": true
+    },
+    {
+        "text": "Investing.com",
+        "link": "https://www.investing.com/analysis/forex",
+        "exclusive": true
+    },
+    {
+        "text": "FBS",
+        "link": "https://fbs.com/analytics/news",
+        "exclusive": true
+    },
+    {
+        "text": "fxstreet",
+        "link": "https://www.fxstreet.com/currencies/eurusd",
+        "exclusive": true
+    },
+    {
+        "text": "Yahoo",
+        "link": "https://finance.yahoo.com/quote/EURUSD=X",
+        "exclusive": true
+    },
+    {
+        "text": "Pinterest",
+        "link": "https://www.pinterest.se/pin/837810336925146679/",
+        "exclusive": true
+    },
+    {
+        "text": "MarketWatch",
+        "link": "https://www.marketwatch.com/investing/currencies?mod=side_nav",
+        "exclusive": true
+    }
+]

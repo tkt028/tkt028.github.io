@@ -1,0 +1,233 @@
+[
+    {
+        "text": "VnExpress",
+        "link": "https://vnexpress.net"
+    }, {
+        "text": "TinhTe",
+        "link": "https://tinhte.vn"
+    }, {
+        "text": "Techrum",
+        "link": "https://www.techrum.vn/",
+        "exclusive": true
+    }, {
+        "text": "Verge",
+        "link": "https://www.theverge.com/",
+        "exclusive": true
+    },{
+        "text": "Techcrunch",
+        "link": "https://techcrunch.com/",
+        "exclusive": true
+    }, {
+        "text": "DDTH",
+        "link": "https://www.ddth.com/forum.php",
+        "exclusive": true
+    }, {
+        "text": "VozForum",
+        "link": "https://vozforum.org/",
+        "exclusive": true
+    },{
+        "text": "Zing",
+        "link": "https://zingnews.vn/"
+    }, {
+        "text": "Feedly",
+        "link": "https://feedly.com/i/my",
+        "exclusive": true
+    }, {
+        "text": "Google Trend",
+        "link": "https://trends.google.com/trends/?geo=VN",
+        "exclusive": true
+    }, {
+        "text": "Pocket",
+        "link": "https://getpocket.com",
+        "exclusive": true
+    },{
+        "text": "Github",
+        "link": "https://github.com/explore",
+        "exclusive": true
+    }, {
+        "text": "Youtube",
+        "link": "https://www.youtube.com/",
+        "exclusive": true
+    },{
+        "text": "Facebook",
+        "link": "https://www.facebook.com/",
+        "exclusive": true
+    }, {
+        "text": "Linkedin",
+        "link": "https://www.linkedin.com/",
+        "exclusive": true
+    }, {
+        "text": "Indeed",
+        "link": "https://jobs.vn.indeed.com/companies",
+        "exclusive": true
+    }, {
+        "text": "SO-Jobs",
+        "link": "https://stackoverflow.com/jobs",
+        "exclusive": true
+    },{
+        "text": "Toplist.vn",
+        "link": "https://toplist.vn/"
+    }, {
+        "text": "Pinterest",
+        "link": "https://www.pinterest.com/",
+        "exclusive": true
+    }, {
+        "text": "Twitter",
+        "link": "https://twitter.com/",
+        "exclusive": true
+    }, {
+        "text": "TikTok",
+        "link": "https://www.tiktok.com/",
+        "exclusive": true
+    }, {
+        "text": "Instagram",
+        "link": "https://www.instagram.com/",
+        "exclusive": true
+    }, {
+        "text": "CafeBiz",
+        "link": "https://cafebiz.vn/"
+    }, {
+        "text": "CafeBiz Talks",
+        "link": "https://cafebiz.vn/videos/8235-bac-si-tran-quoc-khanh-nguoi-viet-luoi-thich-tiet-kiem-tien-nhung-khong-co-quy-tai-chinh-danh-cho-kiem-tra-suc-khoe-dinh-ky.chn"
+    }, {
+        "text": "BrandsVietnam",
+        "link": "https://www.brandsvietnam.com"
+    }, {
+        "text": "TuoiTre",
+        "link": "https://tuoitre.vn/"
+    }, {
+        "text": "ThanhNien",
+        "link": "https://thanhnien.vn/"
+    }, {
+        "text": "Doi Song & Phat Luat",
+        "link": "https://www.doisongphapluat.com/",
+        "exclusive": true
+    }, {
+        "text": "SaoStar",
+        "link": "https://saostar.vn/",
+        "exclusive": true
+    }, {
+        "text": "VietnamNet",
+        "link": "https://vietnamnet.vn/"
+    }, {
+        "text": "Kenh14",
+        "link": "https://kenh14.vn/"
+    }, {
+        "text": "DanTri",
+        "link": "https://dantri.com.vn/"
+    }, {
+        "text": "24h-com-vn",
+        "link": "https://www.24h.com.vn/"
+    }, {
+        "text": "BaoMoi",
+        "link": "https://baomoi.com/"
+    }, {
+        "text": "Tiki",
+        "link": "https://tiki.vn"
+    },{
+        "text": "Amazon",
+        "link": "https://www.amazon.com",
+        "exclusive": true
+    }, {
+        "text": "Product Hunt",
+        "link": "https://www.producthunt.com/",
+        "exclusive": true
+    },{
+        "text": "spiderum",
+        "link": "https://spiderum.com"
+    }, {
+        "text": "QuanTriMang",
+        "link": "https://quantrimang.com"
+    }, {
+        "text": "LinuxModulo",
+        "link": "https://www.xmodulo.com/"
+    }, {
+        "text": "InfoQ",
+        "link": "https://www.infoq.com/?variant=homepage_collections",
+        "exclusive": true
+    }, {
+        "text": "Google Web",
+        "link": "https://developers.google.com/web/fundamentals",
+        "exclusive": true
+    }, {
+        "text": "Mozilla",
+        "link": "https://developer.mozilla.org/en-US/",
+        "exclusive": true
+    }, {
+        "text": "Microsoft",
+        "link": "https://docs.microsoft.com/en-us/",
+        "exclusive": true
+    }, {
+        "text": "MartinFowler",
+        "link": "https://martinfowler.com/"
+    }, {
+        "text": "Oreilly",
+        "link": "https://www.oreilly.com"
+    }, {
+        "text": "Manning",
+        "link": "https://www.manning.com",
+        "exclusive": true
+    },{
+        "text": "HBR",
+        "link": "https://hbr.org/",
+        "exclusive": true
+    },{
+        "text": "MIT Technology Review",
+        "link": "https://www.technologyreview.com"
+    }, {
+        "text": "SciAmerican",
+        "link":  "https://www.scientificamerican.com"
+    }, {
+        "text": "DarkReading",
+        "link": "https://www.darkreading.com"
+    },{
+        "text": "YCombinator",
+        "link": "https://news.ycombinator.com/",
+        "exclusive": true
+    }, {
+        "text": "Reddit",
+        "link": "https://www.reddit.com/",
+        "exclusive": true
+    }, {
+        "text": "Quora",
+        "link": "https://www.quora.com/",
+        "exclusive": true
+    }, {
+        "text": "Hackernoon",
+        "link": "https://hackernoon.com/"
+    }, {
+        "text": "Hacker News",
+        "link": "https://news.ycombinator.com/news",
+        "exclusive": true
+    },{
+        "text": "Pointer.io",
+        "link": "https://www.pointer.io/tags/"
+    }, {
+        "text": "Kaggle",
+        "link": "https://www.kaggle.com/",
+        "exclusive": true
+    }, {
+        "text": "KDnuggets",
+        "link": "https://www.kdnuggets.com/"
+    }, {
+        "text": "COVID",
+        "link": "https://covid19.who.int/"
+    },{
+        "text": "GalaxyCine",
+        "link": "https://www.galaxycine.vn/"
+    },{
+        "text": "FPT Play",
+        "link": "https://fptplay.vn/",
+        "exclusive": true
+    }, {
+        "text": "Shinrankai",
+        "link": "https://shinrankai.jp/"
+    }, {
+        "text": "JK",
+        "link": "https://jkrishnamurti.org/",
+        "exclusive": true
+    }, {
+        "text" : "BlogKiemTien",
+        "link" : "https://blogkiemtien.net/"
+    }
+]

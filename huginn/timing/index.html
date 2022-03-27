@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, maximum-scale = 2.0, user-scalable = yes, width = device-width">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Curio-TK-01</title>
+<style>
+<!--
+html {
+	height: 100%;
+}
+body {
+	background: #444;
+	background: radial-gradient(white, black);
+	background: -webkit-radial-gradient(white, black); /* kludge: for old Safari on Win */
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* Slide ------------------------- */
+#slide {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#slide td {
+	vertical-align: middle;
+	text-align: center;
+}
+#activeSlide {
+	border: none;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	image-rendering: auto;
+	
+}
+
+/* Navigation buttons ------------------------- */
+#navigation div {
+	position: fixed;
+	top: 5px;
+	height: 50px;
+	width: 50px;
+	border: 2px solid #000;
+	z-index: 100;
+	line-height: 50px;
+	text-align: center;
+	display: table-cell;
+	font-size: 36px;
+	background-color: #fff;
+	cursor: pointer;
+}
+#tocIcon {
+	left: 5px;
+}
+#previousIcon {
+	right: 60px;
+}
+#previousIcon:hover {
+	background-color: #999;
+}
+#nextIcon {
+	right: 5px;
+}
+#nextIcon:hover {
+	background-color: #999;
+}
+#previousIcon, #nextIcon {
+	font-size: 24px !important;
+}
+
+/* Table of Contents popup ------------------------- */
+#toc {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #e7eaf0;
+	width: 200px;
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	border-right: 1px solid #929292;
+	z-index: 1000;
+}
+#toc ul {
+	margin: 0;
+	padding: 0;
+	font-family: HelveticaNeue, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 11px;
+	list-style-type: none;
+}
+#toc ul li {
+	margin: 8px;
+	white-space: nowrap;
+}
+#toc ul li a {
+	color: #000;
+	text-decoration: none;
+}
+#toc ul li a:hover {
+	color: #0A6DBF;
+	text-decoration: underline;
+}
+#toc ul li img {
+	margin-right: 5px;
+	vertical-align: middle;
+	border: none;
+	width: 50px;
+}
+-->
+</style>
+<script type="text/javascript">
+var isTouchDevice = 'ontouchstart' in document.documentElement;
+var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+var currentSlideIndex = 0;
+var projectTitle = "Curio-TK-01";
+var slides = new Array();  
+var slideHierarchy = [
+		{
+			title: "Journal 2021-07-01 Timing in trading",
+			uuid: "F11CA1D6-C1E3-4F83-ADF6-2DF849B3E459",
+			tags: [],
+			image: "Contents/Journal%202021-07-01%20Timing%20in%20trading-f11ca1d6-c1e3-4f83-adf6-2df849b3e459.jpg?nocache=646915275",
+			imageSize: { width: 1222.000000, height: 1207.000000 },
+			thumbnail: "Contents/Journal%202021-07-01%20Timing%20in%20trading-f11ca1d6-c1e3-4f83-adf6-2df849b3e459-Thumb.png?nocache=646915275",
+			imagemap: [
+				{
+					href: "https://forex.timezoneconverter.com/?timezone=Asia/Ho_Chi_Minh;",
+					tags: [],
+					shape: "polygon",
+					coords: "20,109 335,109 335,531 20,531",
+				},
+				{
+					href: "https://forex.timezoneconverter.com/",
+					tags: [],
+					shape: "polygon",
+					coords: "472,19 696,19 696,35 472,35",
+				},
+				{
+					href: "https://www.worldtimebuddy.com/",
+					tags: [],
+					shape: "polygon",
+					coords: "472,48 680,48 680,64 472,64",
+				},
+				{
+					href: "https://hercules.finance/faq/what-is-the-time-zone-of-mt4-and-mt5-trading-platforms/",
+					tags: [],
+					shape: "polygon",
+					coords: "437,1000 1171,1000 1171,1188 437,1188",
+				},
+				{
+					href: "Documents/Image-5a727f0e-8385-4dd3-8221-5f5149f6cd73/Image.jpg",
+					tags: [],
+					shape: "polygon",
+					coords: "494,774 1094,774 1094,973 494,973",
+				},
+				{
+					href: "https://get.exness.help/hc/en-us/articles/360014390760-What-timezone-does-MetaTrader-follow-",
+					tags: [],
+					shape: "polygon",
+					coords: "94,1022 329,1022 329,1058 94,1058",
+				},
+				{
+					href: "Documents/Image-5fb90946-7764-4997-9124-7e918318f366/Image.jpg",
+					tags: [],
+					shape: "polygon",
+					coords: "25,844 417,844 417,986 25,986",
+				}
+			]
+		}
+	]
+;
+
+function loadTOC(elementToAddTo, slidesAtLevel) {
+	if (!slidesAtLevel)
+		return;
+		
+	var listElement = document.createElement("ul");
+	
+	for (var slideIndex = 0; slideIndex < slidesAtLevel.length; ++slideIndex) {
+		var title = slidesAtLevel[slideIndex].title;
+		var thumbnail = slidesAtLevel[slideIndex].thumbnail;
+		var image = slidesAtLevel[slideIndex].image;
+		var childHierarchy = slidesAtLevel[slideIndex].childHierarchy;
+
+		var listItemElement = document.createElement("li");
+		if (image) {
+			slides.push(slidesAtLevel[slideIndex]);
+
+			var anchorElement = document.createElement("a");
+			anchorElement.setAttribute("href", "javascript:goToSlideAtIndex("+((slides.length) - 1)+");");
+			var imageElement = document.createElement("img");
+			imageElement.setAttribute("src", thumbnail);
+			anchorElement.appendChild(imageElement);
+			anchorElement.appendChild(document.createTextNode(title));
+			listItemElement.appendChild(anchorElement);
+		}
+		else {
+			var imageElement = document.createElement("img");
+			imageElement.setAttribute("src", thumbnail);
+			listItemElement.appendChild(imageElement);
+			listItemElement.appendChild(document.createTextNode(title));
+		}	
+		loadTOC(listItemElement, childHierarchy);
+		listElement.appendChild(listItemElement);
+	}
+	
+	elementToAddTo.appendChild(listElement);
+}
+
+function show(id) {
+	document.getElementById(id).style.visibility = "visible";
+}
+function hide(id) {
+	document.getElementById(id).style.visibility = "hidden";
+}
+
+function showNavigation() {
+	document.getElementById('tocIcon').style.opacity = 0.5;
+	document.getElementById('tocIcon').style.filter = "alpha(opacity=50)";
+	document.getElementById('previousIcon').style.opacity = 0.5;
+	document.getElementById('previousIcon').style.filter = "alpha(opacity=50)";
+	document.getElementById('nextIcon').style.opacity = 0.5;
+	document.getElementById('nextIcon').style.filter = "alpha(opacity=50)";
+}
+function hideNavigation() {
+	document.getElementById('tocIcon').style.opacity = 0;
+	document.getElementById('tocIcon').style.filter = "alpha(opacity=0)";
+	document.getElementById('previousIcon').style.opacity = 0;
+	document.getElementById('previousIcon').style.filter = "alpha(opacity=0)";
+	document.getElementById('nextIcon').style.opacity = 0;
+	document.getElementById('nextIcon').style.filter = "alpha(opacity=0)";
+}
+
+var showNavigationTimeout = null;
+
+function goToSlideAtIndex(slideIndex, silent) {
+	currentSlideIndex = slideIndex;
+	
+	document.getElementById("activeSlide").src = slides[slideIndex].image;
+	if (slides[slideIndex].imageSize) {
+		document.getElementById("activeSlide").width = slides[slideIndex].imageSize.width;
+		document.getElementById("activeSlide").height = slides[slideIndex].imageSize.height;
+	}
+
+	var title = slides[slideIndex].title;
+	window.document.title = projectTitle + " \u2014 " + title;
+	
+	var imagemap = slides[slideIndex].imagemap;
+	var mapElement = document.getElementById("activeSlideMap");
+	while (mapElement.firstChild) {
+		mapElement.removeChild(mapElement.firstChild);
+	}
+	if (imagemap) {
+		for (var imagemapIndex = 0; imagemapIndex < imagemap.length; ++imagemapIndex) {
+			var href = imagemap[imagemapIndex].href;
+			var shape = imagemap[imagemapIndex].shape;
+			var coords = imagemap[imagemapIndex].coords;
+			var areaElement = document.createElement("area");
+			areaElement.setAttribute("href", href);
+			areaElement.setAttribute("coords", coords);
+			areaElement.setAttribute("shape", shape);
+			mapElement.appendChild(areaElement);
+		}
+	}
+
+	if (currentSlideIndex == 0) {
+		hide('previousIcon');
+	}
+	else {
+		show('previousIcon');
+	}
+
+	if (currentSlideIndex+1 == slides.length) {
+		hide('nextIcon');
+	}
+	else {
+		show('nextIcon');
+	}
+
+	// kludge: force the hover color to go away on touch devices
+	if (isTouchDevice) {
+		document.getElementById('previousIcon').style.backgroundColor = "#fff";
+		document.getElementById('nextIcon').style.backgroundColor = "#fff";
+	}
+
+	if (!silent) {
+		if (history.pushState) {
+			if (slideIndex == 0)
+				history.pushState(null, document.title, window.location.pathname + window.location.search);
+			else
+				history.pushState(null, document.title, '#'+slideIndex);
+		}
+		else {
+			location.hash = '#'+slideIndex;
+		}
+	}
+	
+	clearTimeout(showNavigationTimeout);
+	showNavigation();
+	showNavigationTimeout = setTimeout('hideNavigation()', 3000);
+}
+function goToFirstSlide() {
+	goToSlideAtIndex(0);
+}
+function goToLastSlide() {
+	if (slides.length > 0) {
+		goToSlideAtIndex(slides.length - 1);
+	}
+}
+function goToPreviousSlide() {
+	if (currentSlideIndex > 0) {
+		goToSlideAtIndex(currentSlideIndex-1);
+	}
+}
+function goToNextSlide() {
+	if (currentSlideIndex+1 < slides.length) {
+		goToSlideAtIndex(currentSlideIndex+1);
+	}
+}
+function goToSlideWithUUID(uuid) {
+	for (var slideIndex = 0; slideIndex < slides.length; ++slideIndex) {
+		if (slides[slideIndex].uuid == uuid) {
+			goToSlideAtIndex(slideIndex);
+			break;
+		}
+	}
+}
+
+window.onpopstate = function(event) {
+	var indexFromHash = window.location.hash.replace('#', '');
+	if (indexFromHash)
+		currentSlideIndex = parseInt(indexFromHash);
+	else
+		currentSlideIndex = 0;
+	goToSlideAtIndex(currentSlideIndex, true);
+};
+
+window.onload = function () {
+	loadTOC(document.getElementById("toc"), slideHierarchy);
+
+	var indexFromHash = window.location.hash.replace('#', '');
+	if (indexFromHash)
+		currentSlideIndex = parseInt(indexFromHash);
+	goToSlideAtIndex(currentSlideIndex);
+	
+	var autoHideTOC = true;
+	if (isSafari && !isTouchDevice) // kludge: with Safari on the Mac we have to briefly show the TOC for TOC scrolling to work
+		autoHideTOC = false;
+	if (autoHideTOC)
+		hide('toc');
+
+	document.getElementById('tocIcon').onmouseover=function(){
+		show('toc');
+	};
+	document.getElementById('slide').onmouseover=function(){
+		hide('toc');
+	};
+	document.getElementById('previousIcon').onmousedown=function(){
+		goToPreviousSlide();
+	};
+	document.getElementById('nextIcon').onmousedown=function(){
+		goToNextSlide();
+	};
+
+	document.getElementById('slide').onmousemove=function(){
+		clearTimeout(showNavigationTimeout);
+		showNavigation();
+		showNavigationTimeout = setTimeout('hideNavigation()', 2000);
+	};
+	document.getElementById('navigation').onmousemove=function(){
+		clearTimeout(showNavigationTimeout);
+		showNavigation();
+	};
+	document.getElementById('navigation').onmouseout=function(){
+		clearTimeout(showNavigationTimeout);
+		hideNavigation();
+	};
+	
+	if (slides.length <= 1) {
+		hide('toc');
+		hide('tocIcon');
+		hide('previousIcon');
+		hide('nextIcon');
+	}
+
+	document.onkeydown = function(event) {
+		event = event || window.event;
+		if (event.keyCode == '37' || event.keyCode == '38') // left or up
+			goToPreviousSlide();
+	    else if (event.keyCode == '39' || event.keyCode == '40') // right or down
+			goToNextSlide();
+	};
+}
+</script> 
+</head> 
+<body>
+	<table id="slide">
+		<tr>
+			<td>
+				<img id="activeSlide" usemap="#activeSlideMap" />
+				<map id="activeSlideMap" name="activeSlideMap"></map>
+			</td>
+		</tr>
+	</table>
+	<div id="navigation">
+		<div id="tocIcon">&#9776;</div>
+		<div id="previousIcon">&#9650;</div>
+		<div id="nextIcon">&#9660;</div>
+	</div>
+	<div id="toc"></div>
+</body>
+</html>
